@@ -30,15 +30,68 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 
 	function initMap() {
 		location = new google.maps.LatLng(37.598606, -122.065635);
+		markerLoc = new google.maps.LatLng(37.598460, -122.065635);
+		var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+		var mapStyles = [
+			{ //hide all fills
+				elementType: 'geometry.fill',
+				stylers: [
+					{ visibility: 'off' }
+				]
+			},
+			{elementType: 'labels.text.stroke', stylers: [{color: '#6f3e00'}]},
+			{elementType: 'labels.text.fill', stylers: [{color: '#ffebba'}]},
+			{
+			featureType: 'road',
+			elementType: 'geometry',
+			stylers: [{color: '#ae6000'}]
+			},
+			{
+			featureType: 'road',
+			elementType: 'geometry.stroke',
+			stylers: [{color: '#ae6000'}]
+			},
+			{
+			featureType: 'road',
+			elementType: 'labels',
+			stylers: [{ visibility: "off" }]
+			},
+			{
+			featureType: 'road.highway',
+			elementType: 'geometry',
+			stylers: [{color: '#ae6000'}]
+			},
+			{
+			featureType: 'road.highway',
+			elementType: 'geometry.stroke',
+			stylers: [{color: '#ae6000'}]
+			},
+			{
+			featureType: 'road.highway',
+			elementType: 'labels',
+			stylers: [{ visibility: "off" }]
+			},
+			{
+				featureType: 'landscape.natural.landcover',
+				elementType: 'geometry.fill',
+				stylers: [
+					{ visibility: 'on' },
+				]
+			}
+		];
 		mapOptions = { 
 			center: location,
 			zoom: 9,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			styles: mapStyles,
+			scrollwheel:  false,
+			backgroundColor: 'hsla(0, 0%, 0%, 0)'
 		};
 
 		marker = new google.maps.Marker({
-		    position: location,
-		    title:"Your Christmas gift!"
+		    position: markerLoc,
+		    title:"Your Christmas gift!",
+		    icon: '../resources/map_compass.png'
 		});
 		map = new google.maps.Map(document.getElementById('map'), mapOptions);
 		marker.setMap(map);
