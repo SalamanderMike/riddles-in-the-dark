@@ -1,0 +1,37 @@
+<% include ./partials/header.ejs %>
+
+<ul class="nav nav-tabs">
+	<div ng-repeat="(key,val) in views track by $index" ng-class="{active:val}">
+		<a href="" ng-click="app.tabFunction(key)" ng-bind="key"></a>
+	</div> 
+</ul> 
+
+<section class="tab-content">
+
+	<div title="Clue 1" class="tab-pane" ng-class="{active : views.CLUE1}">
+		<p>I contain one 'ion', but I'm not a molecule. I'm a large square inside a big apple. I'm not only a synonym to marriage, but the entire goal of it. What am I?</p><br>
+		<p>I'm a street within and a city outside The City</p>
+	</div>
+
+	<div title="Clue 2" class="tab-pane" ng-class="{active : views.CLUE2}">
+		<p>37 -122</p>
+		<p>If you add, subtract, or multiply me, you'll only get half the truth and miss me by a long shot.</p>
+	</div>
+
+	<div title="Clue 3" class="tab-pane" ng-class="{active : views.CLUE3}">
+		<p>598606 and 065635</p>
+		<p>Do you get the point? This clue will get you closer. </p> <br>
+		<div class="map-wrapper">
+			<div id="map"></div>			
+		</div>
+
+		<div class="map-spacer"></div>
+	</div>
+
+	<div title="Clue 4" class="tab-pane" ng-class="{active : views.CLUE4}">
+		<p>iMac iPhone. iRun iJog. iSoar ____!</p>
+	</div>
+
+</section>
+
+<% include ./partials/footer.ejs %>

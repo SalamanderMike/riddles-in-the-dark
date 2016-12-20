@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta 	charset="utf-8">
+	<meta 	http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta 	name="description" content="">
+<!-- 	<meta 	name="google-site-verification" content="32cBiVhpfIxlw_QWcu4KBl6ezI8BrGWSs5JKMEWOHK4"/>
+	<meta 	name="google-site-verification" content="IZaP59PxVe9KfDYuaqIXcC86SWQigaSg5dljTEsM4oY"/> -->
+	<!-- <link 	rel="alternate" href="http://www.michaeljohnmcclure.com/" hreflang="en-us"/> -->
+	<title 	ng-bind="title"></title>
+
+	<!-- ANGULARJS -->
+	<script src="bower_components/angular/angular.js"></script>
+
+	<!-- BOOTSTRAP -->
+	<link 	href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<script src="/bower_components/jquery/dist/jquery.js"></script>
+	<!-- <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script> -->
+	<link  	href="css/main.css"	rel="stylesheet" type="text/css"/>
+
+	<!-- ANGULARJS COMPONENTS -->
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+	<!-- ANGULAR WIRING -->
+	<script src="js/main.js"></script>
+	<script src="js/router.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/components.js"></script>
+
+	<!-- THIRD PARTY -->
+	<link  	href="/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+</head>
+<body class="ng-view" ng-cloak>
+	<div id="background">
+
+<!-- LEFT SLIDING DRAWER -->
+	<div id="drawer-show">
+		<div ng-click="app.showLeft($event)" id="drawer-activate">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</div>
+		<drawer visible="leftVisible" alignment="left">
+			<ul>
+				<li ng-bind="key"  
+					class="drawer-tabs" 
+					ng-class="{ active:val }"
+					ng-click="app.tabFunction(key)" 
+					ng-repeat="(key,val) in views track by $index">
+				</li><br>
+			</ul>
+		</drawer>
+	</div>
+
+	<section class="titles">
+		<h1>Riddles In The Dark</h1>	
+		<hr>
+	</section>

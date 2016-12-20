@@ -1,0 +1,23 @@
+// Resource and external plugins.
+@import "/bower_components/normalize-css/normalize.css";
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:100|Muli:300);
+
+// Variables setting.
+@import "variables.scss";
+
+// Reusable CSS Settings.
+@import "base.scss";
+@import "layout.scss";
+@import "module.scss";
+@import "state.scss";
+@import "theme.scss";
+
+// CSS Setting for each section.
+@import "sections/drawer.scss";
+@import "sections/home.scss";
+@import "sections/intro.scss";
+@import "sections/projects.scss";
+@import "sections/apis.scss";
+@import "sections/history.scss";
+@import "sections/locale.scss";
+@import "sections/responsive.scss";

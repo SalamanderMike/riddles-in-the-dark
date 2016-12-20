@@ -1,0 +1,25 @@
+{
+  "name": "riddles-in-the-dark",
+  "version": "0.0.1",
+  "description": "Treasure Hunt style game originally for my husband to find his Christmas gift",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalamanderMike/riddles-in-the-dark.git"
+  },
+  "author": "Michael McClure",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SalamanderMike/riddles-in-the-dark/issues"
+  },
+  "homepage": "https://github.com/SalamanderMike/riddles-in-the-dark#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0"
+  }
+}

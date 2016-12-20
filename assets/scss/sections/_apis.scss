@@ -1,0 +1,18 @@
+.map-wrapper {
+	text-align: center;
+
+	#map {
+		position: relative;
+		top: 0px;
+		// right: 0px;
+		height: 300px;
+		width: 100%;
+		box-shadow: 0px 0px 30px 0px rgba(0,0,255, 1);
+		border: solid 2px #b0b0b0;
+	}
+}
+
+.map-spacer {
+	position: relative;
+	margin: 300px;
+}

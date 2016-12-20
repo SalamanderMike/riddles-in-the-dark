@@ -1,0 +1,32 @@
+.dropdown-wrapper {
+	.dropdown-button {
+		background: #ffffff;
+		background: -moz-linear-gradient(-45deg, #ffffff 13%, #b5ddff 47%, #82f2ff 53%, #ffffff 92%);
+		background: -webkit-linear-gradient(-45deg, #ffffff 13%,#b5ddff 47%,#82f2ff 53%,#ffffff 92%);
+		background: linear-gradient(135deg, #ffffff 13%,#b5ddff 47%,#82f2ff 53%,#ffffff 92%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 );
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		color: #5A5A5A;
+		padding: 1px 10px;
+		font-size: 1em;
+	}
+
+	.dropdown-button:hover {
+		-webkit-filter: brightness(90%);
+		filter: brightness(90%);
+	}
+
+	.dropdown-menu {
+		background: white;
+		width: 246px;
+		color: grey;
+		font-size: 1em;
+		cursor: pointer;
+
+		li:hover {
+			background: #EEEEEE;
+		}
+	}	
+}

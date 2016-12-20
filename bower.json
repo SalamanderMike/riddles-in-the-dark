@@ -1,0 +1,31 @@
+{
+  "name": "riddles-in-the-dark",
+  "description": "Treasure Hunt style game originally for my husband to find his Christmas gift",
+  "main": "server.js",
+  "authors": [
+    "Michael McClure"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/SalamanderMike/riddles-in-the-dark",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.6.0",
+    "angular-route": "~1.6.0",
+    "angular-sanitize": "~1.6.0",
+    "angular-animate": "^1.6.0",
+    "font-awesome": "fontawesome#~4.6.3",
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "normalize-css": "^5.0.0",
+    "angular-bootstrap": "^2.2.0"
+  },
+  "resolutions": {
+    "angular": "~1.6.0"
+  }
+}

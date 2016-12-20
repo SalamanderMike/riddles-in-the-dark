@@ -1,0 +1,86 @@
+.titles {
+	text-align: center;
+	font-size: 1.5em;
+	color: $gold;
+
+	h1 {
+		color: $dkBlue;
+	}
+	hr {
+		margin-top: -30px;
+		border-color: #1e1e1e;
+		width: 25%;
+	}
+	p {
+		position: relative;
+		top: -10px;
+	}
+}
+
+
+.nav.nav-tabs {
+	position: relative;
+	top: 10px;
+	left: 0px;
+	right: 0px;
+	min-width: 482px;
+	width: 100%;
+	margin: 15px;
+	text-align: center;
+	font-size: 2em;
+}
+// NON-SELECTED TAB
+.nav-tabs {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+
+	div {
+		display: inline;
+		margin: 0 17px;
+
+		a:hover, a:focus {
+			background-color: rgba(0, 0, 0, 0);
+			border: none;
+			text-decoration: none;
+			color: #fff6b7;
+		}
+	}
+
+	div.active {
+		a,
+		a:focus,
+		a:hover {
+			background-color: rgba(0, 0, 0, 0);
+			border: none;
+			color: #fff6b7;
+			text-decoration: none;
+		}
+	}
+}
+
+// PANEL BOX
+.tab-content {
+	background-color: #0c0c0c;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	min-height: 200px;
+	color: #fff;
+	-webkit-box-shadow: 0px 0px 50px 0px rgba(0, 100, 255, 0.25);
+	-moz-box-shadow:    0px 0px 50px 0px rgba(0, 100, 255, 0.25);
+	box-shadow:         0px 0px 50px 0px rgba(0, 100, 255, 0.25);
+
+	.tab-pane {
+		position: relative;
+		left: 0px;
+		right: 0px;
+		margin: 3%;
+		color: #dbdbdb;
+		font-family: 'Muli', sans-serif;
+		font-size: 1.2em;
+
+		// p {
+
+		// }
+	}
+}

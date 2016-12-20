@@ -1,0 +1,5 @@
+.DS_Store
+**/config.js
+assets/css/main.css.map/
+assets/.sass-cache/
+*.scssc
