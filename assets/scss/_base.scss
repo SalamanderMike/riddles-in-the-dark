@@ -1,9 +1,9 @@
 #background {
 	background: black;
-	background: -webkit-linear-gradient(-45deg, #000 0%,#191919 60%,#000 85%,#191919 100%);
-	background: -moz-linear-gradient(-45deg, #000 0%, #191919 60%, #000 85%, #191919 100%);
-	background: -ms-linear-gradient(-45deg, #000 0%,#191919 60%,#000 85%,#191919 100%);
-	background: linear-gradient(135deg, #000 0%,#191919 60%,#000 85%,#191919 100%);
+	background: -webkit-linear-gradient(-45deg, #000 0%,#001e01 60%,#000 85%,#001e01 100%);
+	background: -moz-linear-gradient(-45deg, #000 0%, #001e01 60%, #000 85%, #001e01 100%);
+	background: -ms-linear-gradient(-45deg, #000 0%,#001e01 60%,#000 85%,#001e01 100%);
+	background: linear-gradient(135deg, #000 0%,#001e01 60%,#000 85%,#001e01 100%);
 	position: fixed; 
 	top: 0; 
 	left: 0; 
@@ -12,13 +12,30 @@
 	z-index: -10;
 }
 
+@font-face {
+	font-family: 'RingbearerMedium';
+	src: url('../resources/webfont/RingbearerMedium.eot?#iefix') format('embedded-opentype'),  
+	url('../resources/webfont/RingbearerMedium.woff') format('woff'), 
+	url('../resources/webfont/RingbearerMedium.ttf')  format('truetype'), 
+	url('../resources/webfont/RingbearerMedium.svg#RingbearerMedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'anirm___';
+	src: url('../resources/webfont/anirm___.ttf')  format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
 
 body {
 	background-color: black;
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'RingbearerMedium', Fallback;
 	z-index: -10;
 }
 
@@ -33,4 +50,20 @@ li {
 
 .center {
 	text-align: center;
+}
+
+input {
+	background: url(../resources/map-background.png) no-repeat 0 0;
+	background-size: 500% 500%;
+	font-family: 'anirm___';
+	margin: 40px;
+	text-align: center;
+	border: none;
+	text-shadow: 0px 0px 3px rgba(255, 255, 0, 1);
+	-webkit-box-shadow: 0px 0px 50px 0px rgba(201, 112, 0, 1);
+	-moz-box-shadow:    0px 0px 50px 0px rgba(201, 112, 0, 1);
+	box-shadow:         0px 0px 50px 0px rgba(201, 112, 0, 1);
+}
+input:focus {
+    outline-width: 0;
 }

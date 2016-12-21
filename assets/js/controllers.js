@@ -3,17 +3,54 @@ Crtl = angular.module('Controllers', []);
 Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', function ($scope, $rootScope, $http, $timeout) {
 	var app = this;
 	var location,
+		markerLoc,
 		mapOptions,
 		marker,
 		map;
+	$scope.none = "RIDDLE1";
+	$scope.fail = false;
 	$scope.focusFocus = false;
 	$scope.toggle = true;
 	$scope.views = {
-		CLUE1: 	true,
-		CLUE2: 	false,
-		CLUE3: 	false,
-		CLUE4: 	false
+		INTRO: 		true,
+		RIDDLE1: 	false,
+		RIDDLE2: 	false,
+		RIDDLE3: 	false,
+		RIDDLE4: 	false
 	};
+	$scope.riddle = {};
+
+	$scope.riddles = function(data, riddle, data2) {
+		$scope.fail = false;
+		var answer = data.toLowerCase().replace(/\s+/g, '');
+		var answer2 = data2.replace(/\s+/g, '');
+		switch (riddle) {
+			case "1":
+				answer === "union" ? app.tabFunction("RIDDLE2") : $scope.fail = true;
+				break;
+			case "2":
+				answer === "coordinates" ? app.tabFunction("RIDDLE3") : $scope.fail = true;
+				break;
+			case "3":
+				if (answer === "37.598606" || answer === "-122.065635") {
+					if (answer2 === "37.598606" || answer2 === "-122.065635") {
+						app.tabFunction("RIDDLE4");
+					} else {
+						$scope.fail = true;
+					};
+				} else {
+						$scope.fail = true;
+				};
+				break;
+			default:
+				$scope.riddle = {};
+				$scope.fail = true;
+		};
+	};
+
+
+
+
 
 // GOOGLE MAPS
 	(function() {
@@ -114,6 +151,7 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 
 // SECTION: NAV-TABS
 	app.tabFunction = function(tab) {
+		$scope.fail = false;
 		views = $scope.views;
 		angular.forEach(Object.keys(views), function(page) {
 			if (tab != page) {
@@ -122,7 +160,7 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 				views[page] = true;
 			};
 		});
-		if (tab === "CLUE3") app.refreshMaps();
+		if (tab === "RIDDLE4") app.refreshMaps();
 		$scope.views = views;
 	};
 
