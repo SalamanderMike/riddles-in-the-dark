@@ -6,7 +6,7 @@
 	</div> 
 </ul>  -->
 
-<section class="tab-content">
+<section class="tab-content" ng-hide="loading">
 <!-- <p>Riddles in the dark...</p> -->
 
 <!-- <p>This thing all things devours:
@@ -19,9 +19,10 @@ And beats high mountain down.
 
 	<div title="Intro" class="tab-pane" ng-class="{active : views.INTRO}">
 		<p>Welcome to your Christmas gift Treasure Hunt</p><br>
-		<p>Touch the magic crystal to begin your riddle challenge</p>
+		<p>Take the One Ring to begin your riddle challenge</p>
 		<p>if you dare...</p>
-		<img src="../resources/crystal.png" alt="" class="crystal" ng-click="app.tabFunction('RIDDLE1')">
+		<img src="../resources/ring.png" alt="" class="ring" ng-click="app.tabFunction('RIDDLE1')">
+		<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0084.gif" border="0" alt="animated-fire-image-0084" ng-show="fail"/>
 	</div>
 
 	<div title="Riddle1" class="tab-pane" ng-class="{active : views.RIDDLE1}">
@@ -29,6 +30,7 @@ And beats high mountain down.
 		<p>I'm a street within and a city outside The City</p>
 		<form ng-submit="riddles(riddle.one, '1', 'false')">
 			<input type="text" ng-model="riddle.one" value="riddle.one" required autofocus>
+			<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0084.gif" border="0" alt="animated-fire-image-0084" ng-show="fail"/>
 		</form>
 		<p ng-show="fail">That is not the right answer</p>
 	</div>
@@ -38,6 +40,7 @@ And beats high mountain down.
 		<p>If you add, subtract, or multiply me, you'll only get half the truth and miss me by a long shot. what am I?</p>
 		<form ng-submit="riddles(riddle.two, '2', 'false')">
 			<input type="text" ng-model="riddle.two" required>
+			<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0084.gif" border="0" alt="animated-fire-image-0084" ng-show="fail"/>
 		</form>
 		<p ng-show="fail">That is not the right answer</p>
 	</div>
@@ -47,17 +50,17 @@ And beats high mountain down.
 		<p>Do you get the point? Combined with the last clue, this clue will get you closer. </p> <br>
 			<input type="text" ng-model="riddle.three.a" required>
 			<input type="text" ng-model="riddle.three.b" required> <br>
+			<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0084.gif" border="0" alt="animated-fire-image-0084" ng-show="fail"/>
 			<button ng-click="riddles(riddle.three.a, '3', riddle.three.b)">This is my answer</button>
 		<p ng-show="fail">That is not the right answer</p>
 	</div>
 
-	<div title="Riddle4" class="tab-pane" ng-class="{active : views.RIDDLE4}">
-		<p>Follow the compass down to see your Christmas treasure...</p>
+	<div title="MAP" class="tab-pane" ng-class="{active : views.MAP}">
 		<p>"iMac iPhone. iRun iJog. iSoar i____!"</p>
 		<div class="map-wrapper">
+			<p>Follow the compass down to see your Christmas treasure...</p>
 			<div id="map"></div>
 		</div>
-		<div class="map-spacer"></div>
 	</div>
 
 </section>

@@ -4,9 +4,6 @@
 	<meta 	charset="utf-8">
 	<meta 	http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta 	name="description" content="">
-<!-- 	<meta 	name="google-site-verification" content="32cBiVhpfIxlw_QWcu4KBl6ezI8BrGWSs5JKMEWOHK4"/>
-	<meta 	name="google-site-verification" content="IZaP59PxVe9KfDYuaqIXcC86SWQigaSg5dljTEsM4oY"/> -->
-	<!-- <link 	rel="alternate" href="http://www.michaeljohnmcclure.com/" hreflang="en-us"/> -->
 	<title 	ng-bind="title"></title>
 
 	<!-- ANGULARJS -->
@@ -54,8 +51,25 @@
 		</drawer>
 	</div> -->
 
-	<section class="titles">
+	<section class="loading" ng-show="loading">
+		<div id="inner" class="rotating"></div>
+		<div id="middle" class="rotating-cc"></div>
+		<div id="outer" class="rotating"></div>
+	</section>
+
+	<section class="titles" ng-hide="loading">
+		<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0018.gif" 
+			border="0" alt="animated-fire-image-0018" style="position: absolute;top:-30px;left:0;width:100px;height:350px;"/>
+		<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0018.gif" 
+			border="0" alt="animated-fire-image-0018" style="position: absolute;top:-30px;right:0;width:100px;height:350px;"/>
+		<!-- <img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0104.gif" 
+			border="0" alt="animated-fire-image-0104" style="position: absolute;top:87px;left:0;"/> -->
+		<!-- <img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0104.gif" 
+			border="0" alt="animated-fire-image-0104" style="position: absolute;top:87px;right:0;"/> -->
 		<h1>Riddles In The Dark</h1>	
 		<hr>
 		<p>Your Christmas Treasure Hunt</p>
+	</section>
+
+	<section class="fire" ng-hide="loading">
 	</section>

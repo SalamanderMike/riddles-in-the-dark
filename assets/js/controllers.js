@@ -7,18 +7,29 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 		mapOptions,
 		marker,
 		map;
+	$scope.loading = true;
 	$scope.none = "RIDDLE1";
 	$scope.fail = false;
 	$scope.focusFocus = false;
 	$scope.toggle = true;
 	$scope.views = {
-		INTRO: 		true,
-		RIDDLE1: 	false,
+		INTRO: 		false,
+		RIDDLE1: 	true,
 		RIDDLE2: 	false,
 		RIDDLE3: 	false,
-		RIDDLE4: 	false
+		MAP: 		false
 	};
 	$scope.riddle = {};
+
+
+	(function() {
+		$timeout(function() {
+			$scope.loading = true;
+		}, 5000).then(function() {
+			$scope.loading = false;
+		})
+	})();
+
 
 	$scope.riddles = function(data, riddle, data2) {
 		$scope.fail = false;
@@ -160,7 +171,9 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 				views[page] = true;
 			};
 		});
-		if (tab === "RIDDLE4") app.refreshMaps();
+		if (tab === "MAP") {
+			app.refreshMaps();
+		} 
 		$scope.views = views;
 	};
 

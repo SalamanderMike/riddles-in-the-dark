@@ -41,8 +41,7 @@ li {
   text-align: center; }
 
 input {
-  background: url(../resources/map-background.png) no-repeat 0 0;
-  background-size: 500% 500%;
+  background: transparent;
   font-family: 'anirm___';
   margin: 40px;
   text-align: center;
@@ -54,6 +53,98 @@ input {
 
 input:focus {
   outline-width: 0; }
+
+.loading {
+  background: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto; }
+  .loading #inner {
+    background: url(../resources/inner.png) no-repeat 0 0;
+    position: fixed;
+    width: 950px;
+    height: 950px;
+    margin-left: 200px; }
+  .loading #middle {
+    background: url(../resources/middle.png) no-repeat 0 0;
+    position: fixed;
+    width: 950px;
+    height: 950px;
+    margin-left: 200px; }
+  .loading #outer {
+    background: url(../resources/outer.png) no-repeat 0 0;
+    position: fixed;
+    width: 950px;
+    height: 950px;
+    margin-left: 200px; }
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-webkit-keyframes rotating-cc {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+@keyframes rotating-cc {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+.rotating {
+  -webkit-animation: rotating 20s linear infinite;
+  -moz-animation: rotating 20s linear infinite;
+  -ms-animation: rotating 20s linear infinite;
+  -o-animation: rotating 20s linear infinite;
+  animation: rotating 20s linear infinite; }
+
+.rotating-cc {
+  -webkit-animation: rotating-cc  20s linear infinite;
+  -moz-animation: rotating-cc  20s linear infinite;
+  -ms-animation: rotating-cc  20s linear infinite;
+  -o-animation: rotating-cc  20s linear infinite;
+  animation: rotating-cc  20s linear infinite; }
 
 .titles {
   text-align: center;
@@ -107,34 +198,38 @@ input:focus {
     text-decoration: none; }
 
 .tab-content {
-  background: url(../resources/map-background.png) no-repeat 0 0;
+  background: url(../resources/riddle-background.png) no-repeat 0 0;
   background-size: 100% 100%;
   position: absolute;
   left: 0px;
   right: 0px;
+  width: 100%;
+  height: 600px;
   min-height: 200px;
   margin-top: 70px;
   color: #fff;
-  -webkit-box-shadow: 0px 0px 50px 0px rgba(255, 255, 0, 0.6);
-  -moz-box-shadow: 0px 0px 50px 0px rgba(255, 255, 0, 0.6);
-  box-shadow: 0px 0px 50px 0px rgba(255, 255, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 50px 0px #ffb400;
+  -moz-box-shadow: 0px 0px 50px 0px #ffb400;
+  box-shadow: 0px 0px 50px 0px #ffb400;
   text-align: center;
   opacity: .9; }
   .tab-content .tab-pane {
     position: relative;
     left: 0px;
     right: 0px;
-    margin: 3%;
+    margin: 150px;
     color: #814700;
     font-family: 'anirm___';
     font-size: 1.5em; }
     .tab-content .tab-pane p {
       margin: 0 150px; }
-    .tab-content .tab-pane .crystal {
+    .tab-content .tab-pane .ring {
       position: relative;
       width: 120px;
       height: 100px;
       cursor: pointer; }
+    .tab-content .tab-pane .explosion {
+      position: absolute; }
     .tab-content .tab-pane button {
       position: relative;
       width: 450px;
@@ -149,19 +244,18 @@ input:focus {
 .map-wrapper {
   background: url(../resources/map-background.png) no-repeat 0 0;
   background-size: 100% 100%;
-  position: relative;
-  top: 0px;
-  height: 550px;
-  width: 100%;
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  right: -150px;
+  height: 600px;
   text-align: center; }
   .map-wrapper #map {
     position: relative;
     top: 0px;
-    height: 550px;
+    height: 570px;
     width: 100%;
-    box-shadow: 0px 0px 30px 0px blue;
-    border: solid 2px #b0b0b0;
-    z-index: 10; }
+    border: none; }
 
 .map-spacer {
   position: relative;
