@@ -62,7 +62,7 @@
 			<input type="text" ng-model="riddle.three.a" ng-class="fail ? 'fail' : 'pass'" required>
 			<input type="text" ng-model="riddle.three.b" ng-class="fail ? 'fail' : 'pass'" required> <br>
 				<button ng-click="riddles(riddle.three.a, '3', riddle.three.b)">This is my answer</button>
-		<p ng-show="fail">That is not the right answer</p>
+		<br><p ng-show="fail">That is not the right answer</p>
 	</div>
 
 	<div title="MAP" class="tab-pane" ng-class="{active : views.MAP}">
