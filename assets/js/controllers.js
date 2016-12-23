@@ -8,24 +8,34 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 		marker,
 		map;
 	$scope.loading = true;
-	$scope.none = "RIDDLE1";
+	$scope.fireworks = false;
+	$scope.answerTrackingOne = false;
+	$scope.answerTrackingTwo = false;
+	$scope.answerTrackingThree = false;
 	$scope.fail = false;
 	$scope.focusFocus = false;
 	$scope.toggle = true;
 	$scope.views = {
-		INTRO: 		false,
-		RIDDLE1: 	true,
+		INTRO: 		true,
+		RIDDLE1: 	false,
 		RIDDLE2: 	false,
 		RIDDLE3: 	false,
 		MAP: 		false
 	};
 	$scope.riddle = {};
 
+	$scope.correct = function() {
+		$timeout(function() {
+		}, 2000).then(function() {
+			$scope.fireworks = false;
+		})
+	};
 
+	// LOADING FUNCTION
 	(function() {
 		$timeout(function() {
 			$scope.loading = true;
-		}, 5000).then(function() {
+		}, 17000).then(function() {
 			$scope.loading = false;
 		})
 	})();
@@ -37,15 +47,32 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 		var answer2 = data2.replace(/\s+/g, '');
 		switch (riddle) {
 			case "1":
-				answer === "union" ? app.tabFunction("RIDDLE2") : $scope.fail = true;
+				if (answer === "coordinates") {
+					app.tabFunction("RIDDLE2");
+					$scope.answerTrackingOne = true;
+					$scope.fireworks = true;
+					$scope.correct();
+				} else {
+					$scope.fail = true;
+				};
 				break;
 			case "2":
-				answer === "coordinates" ? app.tabFunction("RIDDLE3") : $scope.fail = true;
+				if (answer === "union") {
+					app.tabFunction("RIDDLE3");
+					$scope.answerTrackingTwo = true;
+					$scope.fireworks = true;
+					$scope.correct();
+				} else {
+					$scope.fail = true;
+				};
 				break;
 			case "3":
 				if (answer === "37.598606" || answer === "-122.065635") {
 					if (answer2 === "37.598606" || answer2 === "-122.065635") {
-						app.tabFunction("RIDDLE4");
+						app.tabFunction("MAP");
+						$scope.answerTrackingThree = true;
+						$scope.fireworks = true;
+						$scope.correct();
 					} else {
 						$scope.fail = true;
 					};
@@ -83,49 +110,54 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 		var mapStyles = [
 			{ //hide all fills
 				elementType: 'geometry.fill',
-				stylers: [
-					{ visibility: 'off' }
-				]
+				stylers: [{ visibility: 'off' }]
 			},
-			{elementType: 'labels.text.stroke', stylers: [{color: '#6f3e00'}]},
-			{elementType: 'labels.text.fill', stylers: [{color: '#ffebba'}]},
+			{	elementType: 'labels.text.stroke', stylers: [{color: '#6f3e00'}]},
+			{	elementType: 'labels.text.fill', stylers: [{color: '#ffebba'}]},
 			{
-			featureType: 'road',
-			elementType: 'geometry',
-			stylers: [{color: '#ae6000'}]
+				featureType: 'road',
+				elementType: 'geometry',
+				stylers: [{color: '#ae6000'}]
 			},
 			{
-			featureType: 'road',
-			elementType: 'geometry.stroke',
-			stylers: [{color: '#ae6000'}]
+				featureType: 'road',
+				elementType: 'geometry.stroke',
+				stylers: [{color: '#ae6000'}]
 			},
 			{
-			featureType: 'road',
-			elementType: 'labels',
-			stylers: [{ visibility: "off" }]
+				featureType: 'road',
+				elementType: 'labels',
+				stylers: [{ visibility: "off" }]
 			},
 			{
-			featureType: 'road.highway',
-			elementType: 'geometry',
-			stylers: [{color: '#ae6000'}]
+				featureType: 'road.highway',
+				elementType: 'geometry',
+				stylers: [{color: '#ae6000'}]
 			},
 			{
-			featureType: 'road.highway',
-			elementType: 'geometry.stroke',
-			stylers: [{color: '#ae6000'}]
+				featureType: 'road.highway',
+				elementType: 'geometry.stroke',
+				stylers: [{color: '#ae6000'}]
 			},
 			{
-			featureType: 'road.highway',
-			elementType: 'labels',
-			stylers: [{ visibility: "off" }]
+				featureType: 'road.highway',
+				elementType: 'labels',
+				stylers: [{ visibility: "off" }]
 			},
 			{
 				featureType: 'landscape.natural.landcover',
 				elementType: 'geometry.fill',
+				stylers: [{ visibility: 'on' }]
+			},
+			{
+				featureType: 'water',
+				elementType: 'geometry',
 				stylers: [
-					{ visibility: 'on' },
+					{color: '#0017C7'},
+					{ saturation: -70 },
+					{visibility: "on"}
 				]
-			}
+            }
 		];
 		mapOptions = { 
 			center: location,
@@ -179,37 +211,31 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 
 
 
-// TEST AREA (HARD HAT REQUIRED)
-// END OF TEST AREA
-
-
-
-
 // SLIDING SIDE MENU
-	$scope.leftVisible = false;
-	$scope.rightVisible = false;
+	// $scope.leftVisible = false;
+	// $scope.rightVisible = false;
 
-	app.close = function() {
-		$scope.leftVisible = false;
-		$scope.rightVisible = false;
-	};
+	// app.close = function() {
+	// 	$scope.leftVisible = false;
+	// 	$scope.rightVisible = false;
+	// };
 
-	app.showLeft = function(e) {
-		$scope.leftVisible = true;
-		e.stopPropagation();
-	};
+	// app.showLeft = function(e) {
+	// 	$scope.leftVisible = true;
+	// 	e.stopPropagation();
+	// };
 
-	app.showRight = function(e) {
-		$scope.rightVisible = true;
-		e.stopPropagation();
-	};
+	// app.showRight = function(e) {
+	// 	$scope.rightVisible = true;
+	// 	e.stopPropagation();
+	// };
 
-	$rootScope.$on("documentClicked", _close);
-	$rootScope.$on("escapePressed", _close);
+	// $rootScope.$on("documentClicked", _close);
+	// $rootScope.$on("escapePressed", _close);
 
-	function _close() {
-		$scope.$apply(function() {
-			app.close(); 
-		});
-	};
+	// function _close() {
+	// 	$scope.$apply(function() {
+	// 		app.close(); 
+	// 	});
+	// };
 }]);

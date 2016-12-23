@@ -7,28 +7,24 @@
 	<title 	ng-bind="title"></title>
 
 	<!-- ANGULARJS -->
-	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
 
 	<!-- BOOTSTRAP -->
-	<link 	href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-	<script src="/bower_components/jquery/dist/jquery.js"></script>
-	<!-- <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script> -->
+	<link 	href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
 	<link  	href="css/main.css"	rel="stylesheet" type="text/css"/>
 
 	<!-- ANGULARJS COMPONENTS -->
-	<script src="bower_components/angular-route/angular-route.js"></script>
-	<script src="bower_components/angular-animate/angular-animate.js"></script>
-	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 
 	<!-- ANGULAR WIRING -->
 	<script src="js/main.js"></script>
 	<script src="js/router.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/components.js"></script>
-
-	<!-- THIRD PARTY -->
-	<link  	href="/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
 
 </head>
 <body class="ng-view" ng-cloak>
@@ -51,21 +47,19 @@
 		</drawer>
 	</div> -->
 
+	<!-- LOADING PAGE -->
 	<section class="loading" ng-show="loading">
-		<div id="inner" class="rotating"></div>
-		<div id="middle" class="rotating-cc"></div>
-		<div id="outer" class="rotating"></div>
+		<div id="tree" class="tree"></div>
+		<div id="inner" class="rotating-1"></div>
+		<div id="middle" class="rotating-2"></div>
+		<div id="outer" class="rotating-3"></div>
 	</section>
 
 	<section class="titles" ng-hide="loading">
 		<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0018.gif" 
-			border="0" alt="animated-fire-image-0018" style="position: absolute;top:-30px;left:0;width:100px;height:350px;"/>
+			id="fire-left" border="0" alt="animated-fire-image-0018"/>
 		<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0018.gif" 
-			border="0" alt="animated-fire-image-0018" style="position: absolute;top:-30px;right:0;width:100px;height:350px;"/>
-		<!-- <img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0104.gif" 
-			border="0" alt="animated-fire-image-0104" style="position: absolute;top:87px;left:0;"/> -->
-		<!-- <img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0104.gif" 
-			border="0" alt="animated-fire-image-0104" style="position: absolute;top:87px;right:0;"/> -->
+			id="fire-right" border="0" alt="animated-fire-image-0018"/>
 		<h1>Riddles In The Dark</h1>	
 		<hr>
 		<p>Your Christmas Treasure Hunt</p>

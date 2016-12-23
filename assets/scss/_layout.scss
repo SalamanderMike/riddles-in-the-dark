@@ -3,6 +3,23 @@
 	font-size: 1.5em;
 	color: $gold;
 
+	#fire-left {
+		position: absolute;
+		top: -30px;
+		left: 0;
+		width: 100px;
+		height: 350px;
+		z-index: 0;
+	}
+	#fire-right {
+		position: absolute;
+		top: -30px;
+		right: 0;
+		width: 100px;
+		height: 350px;
+		z-index: 0;
+	}
+
 	h1 {
 		// color: #eab100;
 		font-size: 4em;
@@ -10,11 +27,13 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		text-shadow: 2.5px 2.5px 3px rgba(176, 97, 0, 1);
+		z-index: 100;
 	}
 	hr {
 		margin-top: -50px;
 		border-color: #1e1e1e;
 		width: 45%;
+		z-index: 100;
 	}
 	p {
 		position: relative;
@@ -22,6 +41,21 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		text-shadow: 2.5px 2.5px 1.7px rgba(176, 97, 0, 1);
+		z-index: 100;
+	}
+}
+
+#answer-tracking {
+	position: fixed;
+	top: 250px;
+	left: 200px;
+	text-align: center;
+	color: white;
+
+	.answers {
+		position: relative;
+		margin: 0 40px;
+		text-shadow: 3px 3px 3px rgba(0, 255, 0, .8);
 	}
 }
 
@@ -94,15 +128,17 @@
 		color: #814700;
 		font-family: 'anirm___';
 		font-size: 1.5em;
+		transition: 0.2s linear opacity;
 
 		p {
-			margin: 0 150px;
+			margin: -12px 150px;
 		}
 
 		.ring {
 			position: relative;
 			width: 120px;
 			height: 100px;
+			margin: 40px;
 			cursor: pointer;
 		}
 		.explosion {
@@ -120,8 +156,16 @@
 
 		}
 		button:hover {
-			-webkit-filter: brightness(90%);
-			filter: brightness(90%);
+			-webkit-filter: brightness(150%);
+			filter: brightness(150%);
 		}
+	}
+
+	.tab-pane.active-remove-active {
+		opacity: 0;
+	}
+
+	.tab-pane.active-add {
+		opacity: 0;
 	}
 }

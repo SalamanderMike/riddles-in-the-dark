@@ -1,130 +1,130 @@
 // RESPONSIVE DESIGN (BROWSER SIZE)
 // MEDIUM size
-@media (max-width: 815px) {
-	.nav.nav-tabs {
-		font-size: 1.55em;
+@media (max-width: 1070px) {
+	#background {
+		min-width: 1070px;
 	}
 }
 
 // SMALL size
-@media (max-width: 667px) {
-	.nav.nav-tabs {
-		visibility: hidden;
-	}
-	#drawer-show {
-		visibility: visible;
-	}
-}
+// @media (max-width: 667px) {
+// 	.nav.nav-tabs {
+// 		visibility: hidden;
+// 	}
+// 	#drawer-show {
+// 		visibility: visible;
+// 	}
+// }
 
 // RESPONSIVE DESIGN (DEVICE)
 // iPhone size 6 & 6s Portrait and Landscape
-@media only screen
-  and (max-device-width: 667px)
-  and (-webkit-device-pixel-ratio: 2) {
+// @media only screen
+//   and (max-device-width: 667px)
+//   and (-webkit-device-pixel-ratio: 2) {
 
-	.titles {
-		h1 {
-			font-size: 4em;
-		}
-		hr {
-			margin-top: -60px;
-		    border-color: #1e1e1e;
-			width: 50%;
-		}
-		p {
-			font-size: 3em;
-		}
-	}
+// 	.titles {
+// 		h1 {
+// 			font-size: 4em;
+// 		}
+// 		hr {
+// 			margin-top: -60px;
+// 		    border-color: #1e1e1e;
+// 			width: 50%;
+// 		}
+// 		p {
+// 			font-size: 3em;
+// 		}
+// 	}
 
-	.nav.nav-tabs {
-		visibility: hidden;
-	}
+// 	.nav.nav-tabs {
+// 		visibility: hidden;
+// 	}
 
-	.tab-content {
+// 	.tab-content {
 
-		.tab-pane {
-			max-width: 100%;
-			min-height: 500px;
+// 		.tab-pane {
+// 			max-width: 100%;
+// 			min-height: 500px;
 
-			p {
-				font-size: 2em;
-			}
-		}
-		.content-position {
-			margin: 0 3%;
-			text-align: center;
-		}		
-	}
+// 			p {
+// 				font-size: 2em;
+// 			}
+// 		}
+// 		.content-position {
+// 			margin: 0 3%;
+// 			text-align: center;
+// 		}		
+// 	}
 
-	.map-wrapper {
-		text-align: center;
+// 	.map-wrapper {
+// 		text-align: center;
 
-		#map {
-			position: relative;
-			left: 0;
-			right: 0;
-			width: 100%;
-		}		
-	}
+// 		#map {
+// 			position: relative;
+// 			left: 0;
+// 			right: 0;
+// 			width: 100%;
+// 		}		
+// 	}
 
 
-	#drawer-show {
-		visibility: visible;
+// 	#drawer-show {
+// 		visibility: visible;
 
-		#drawer-activate {
-			i {
-				font-size: 3em;
-			}
-		}
+// 		#drawer-activate {
+// 			i {
+// 				font-size: 3em;
+// 			}
+// 		}
 
-		drawer {
+// 		drawer {
 
-			div {
-				left: -900px;
-				width: 900px;
-				ul {
-					li {
-						max-width: 900px;
-						font-size: 100px;
-					}
-				}
-			}
-			div.show {
-				-webkit-transform: 	translate3d(865px, 0, 0);
-				-moz-transform: 	translate3d(865px, 0, 0);
-				-ms-transform: 		translate3d(865px, 0, 0);
-				-o-transform: 		translate3d(865px, 0, 0);
-				transform: 			translate3d(865px, 0, 0);
-			}
-		}		
-	}
+// 			div {
+// 				left: -900px;
+// 				width: 900px;
+// 				ul {
+// 					li {
+// 						max-width: 900px;
+// 						font-size: 100px;
+// 					}
+// 				}
+// 			}
+// 			div.show {
+// 				-webkit-transform: 	translate3d(865px, 0, 0);
+// 				-moz-transform: 	translate3d(865px, 0, 0);
+// 				-ms-transform: 		translate3d(865px, 0, 0);
+// 				-o-transform: 		translate3d(865px, 0, 0);
+// 				transform: 			translate3d(865px, 0, 0);
+// 			}
+// 		}		
+// 	}
 
-	.dropdown-wrapper {
-		text-align: center;
+// 	.dropdown-wrapper {
+// 		text-align: center;
 
-		.dropdown-button {
-			width: 600px;
-			padding: 40px 0px;;
-			margin-top: 30px;
-			font-size: 2.3em;
-		}
+// 		.dropdown-button {
+// 			width: 600px;
+// 			padding: 40px 0px;;
+// 			margin-top: 30px;
+// 			font-size: 2.3em;
+// 		}
 
-		.dropdown-menu {
-			background: black;
-			margin-top: 40px;
-			width: 600px;
-			border: 1px solid blue;
-			color: $dkBlue;
-			font-size: 1.5em;
-			text-align: center;
-			font-size: 3.3em;
+// 		.dropdown-menu {
+// 			background: black;
+// 			margin-top: 40px;
+// 			width: 600px;
+// 			border: 1px solid blue;
+// 			color: $dkBlue;
+// 			font-size: 1.5em;
+// 			text-align: center;
+// 			font-size: 3.3em;
 
-			li {
-				min-height: 100px;
-			}
-		}	
-	}
-}
+// 			li {
+// 				min-height: 100px;
+// 			}
+// 		}	
+// 	}
+// }
 
 
 

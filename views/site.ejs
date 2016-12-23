@@ -1,64 +1,74 @@
 <% include ./partials/header.ejs %>
 
+<!-- DEVELOPER MODE -->
 <!-- <ul class="nav nav-tabs">
 	<div ng-repeat="(key,val) in views track by $index" ng-class="{active:val}">
 		<a href="" ng-click="app.tabFunction(key)" ng-bind="key"></a>
 	</div> 
 </ul>  -->
 
-<section class="tab-content" ng-hide="loading">
-<!-- <p>Riddles in the dark...</p> -->
+<div id="answer-tracking">
+	<span class="answers" ng-show="answerTrackingOne">Answer #1: {{ riddle.one }} 37 -122</span>
+	<span class="answers" ng-show="answerTrackingTwo">Answer #2: {{ riddle.two }} <span ng-show="answerTrackingThree">City</span></span>	
+</div>
 
-<!-- <p>This thing all things devours:
-Birds, beasts, trees, flowers;
-Gnaws iron, bites steel;
-Grinds hard stones to meal;
-Slays king, ruins town,
-And beats high mountain down.
-</p> -->
+
+<section class="tab-content" ng-hide="loading">
+
+	<div id="fireworks" ng-show="fireworks">
+		<img src="http://www.animatedimages.org/data/media/492/animated-fireworks-image-0072.gif" alt="">
+	</div>
 
 	<div title="Intro" class="tab-pane" ng-class="{active : views.INTRO}">
-		<p>Welcome to your Christmas gift Treasure Hunt</p><br>
-		<p>Take the One Ring to begin your riddle challenge</p>
+		<p>Welcome to your</p><br>
+		<p>Christmas gift Treasure Hunt!</p><br>
+		<p>Answer three riddles to see your gift.</p><br>
+		<p>To begin, touch the One Ring</p><br>
 		<p>if you dare...</p>
 		<img src="../resources/ring.png" alt="" class="ring" ng-click="app.tabFunction('RIDDLE1')">
-		<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0084.gif" border="0" alt="animated-fire-image-0084" ng-show="fail"/>
 	</div>
 
 	<div title="Riddle1" class="tab-pane" ng-class="{active : views.RIDDLE1}">
-		<p>I contain one 'ion', but I'm not a molecule. I'm a large square inside a big apple. I'm not only a synonym to marriage, but the entire goal of it. What am I?</p><br>
-		<p>I'm a street within and a city outside The City</p>
+		<p>37 -122</p><br>
+		<p>If you add, subtract, or multiply me,</p><br>
+		<p>you'll only get half the truth</p><br>
+		<p>and miss me by a long shot.</p><br>
+		<p>What are we?</p>
 		<form ng-submit="riddles(riddle.one, '1', 'false')">
-			<input type="text" ng-model="riddle.one" value="riddle.one" required autofocus>
-			<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0084.gif" border="0" alt="animated-fire-image-0084" ng-show="fail"/>
+			<input type="text" ng-model="riddle.one" ng-class="fail===true ? 'fail' : 'pass'" required autofocus>
 		</form>
 		<p ng-show="fail">That is not the right answer</p>
 	</div>
 
 	<div title="Riddle2" class="tab-pane" ng-class="{active : views.RIDDLE2}">
-		<p>37 -122</p>
-		<p>If you add, subtract, or multiply me, you'll only get half the truth and miss me by a long shot. what am I?</p>
+		<p>I contain one 'ion',</p><br>
+		<p>but I'm not a molecule.</p><br>
+		<p>I'm a large square</p><br>
+		<p>inside a big apple.</p><br>
+		<p>I'm not only a synonym to marriage,</p><br>
+		<p>but the entire goal of it.</p><br>
+		<p>What am I?</p><br>
 		<form ng-submit="riddles(riddle.two, '2', 'false')">
-			<input type="text" ng-model="riddle.two" required>
-			<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0084.gif" border="0" alt="animated-fire-image-0084" ng-show="fail"/>
+			<input type="text" ng-model="riddle.two" ng-class="fail ? 'fail' : 'pass'" value="riddle.two" required>
 		</form>
 		<p ng-show="fail">That is not the right answer</p>
 	</div>
 
 	<div title="Riddle3" class="tab-pane" ng-class="{active : views.RIDDLE3}">
-		<p>598606 and 065635</p>
-		<p>Do you get the point? Combined with the last clue, this clue will get you closer. </p> <br>
-			<input type="text" ng-model="riddle.three.a" required>
-			<input type="text" ng-model="riddle.three.b" required> <br>
-			<img src="http://www.animatedimages.org/data/media/90/animated-fire-image-0084.gif" border="0" alt="animated-fire-image-0084" ng-show="fail"/>
-			<button ng-click="riddles(riddle.three.a, '3', riddle.three.b)">This is my answer</button>
+		<p>598606 and 065635</p><br>
+		<p>Do you get the point?</p> <br>
+		<p>Combined with the first clue,</p> <br>
+		<p>this clue will get you closer.</p> <br>
+			<input type="text" ng-model="riddle.three.a" ng-class="fail ? 'fail' : 'pass'" required>
+			<input type="text" ng-model="riddle.three.b" ng-class="fail ? 'fail' : 'pass'" required> <br>
+				<button ng-click="riddles(riddle.three.a, '3', riddle.three.b)">This is my answer</button>
 		<p ng-show="fail">That is not the right answer</p>
 	</div>
 
 	<div title="MAP" class="tab-pane" ng-class="{active : views.MAP}">
-		<p>"iMac iPhone. iRun iJog. iSoar i____!"</p>
+		<!-- <p>"iMac iPhone. iRun iJog. iSoar i____!"</p> -->
 		<div class="map-wrapper">
-			<p>Follow the compass down to see your Christmas treasure...</p>
+			<p style="margin:10px;">Follow the copass down to see your Christmas treasure!</p>
 			<div id="map"></div>
 		</div>
 	</div>

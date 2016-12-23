@@ -27,15 +27,15 @@ Router.run(function ($location, $rootScope) {
 });
 // SLIDING SIDE MENU
 // LISTEN FOR CLICK TO CLOSE DRAWER
-Router.run(function ($rootScope) {
-	document.addEventListener('keyup', function(e) {                               	
-		if (e.keyCode === 27) $rootScope.$broadcast('escapePressed', e.target);
-	});
+// Router.run(function ($rootScope) {
+// 	document.addEventListener('keyup', function(e) {                               	
+// 		if (e.keyCode === 27) $rootScope.$broadcast('escapePressed', e.target);
+// 	});
 
-	document.addEventListener('click', function(e) {
-		$rootScope.$broadcast('documentClicked', e.target);
-	});
-});
+// 	document.addEventListener('click', function(e) {
+// 		$rootScope.$broadcast('documentClicked', e.target);
+// 	});
+// });
 
 Router.config(function ($httpProvider) {
 		return $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
