@@ -4,8 +4,8 @@ var express = require('express'),
 	app = express();
 
 // DISABLED FOR PRODUCTION
-var Config = require('./assets/resources/config.js');
-var conf = new Config();
+// var Config = require('./assets/resources/config.js');
+// var conf = new Config();
 
 // Middleware
 app.use(bodyParser.urlencoded({extended: true}));
