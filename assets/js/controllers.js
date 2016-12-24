@@ -35,10 +35,28 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 	(function() {
 		$timeout(function() {
 			$scope.loading = true;
-		}, 17000).then(function() {
+		}, 20000).then(function() {
 			$scope.loading = false;
 		})
 	})();
+
+	// AUDIO PAUSE FUNCTION
+	var play = true;
+	var audio = document.getElementById('music');
+
+	$scope.$on('pauseMusic', function(event, key) {
+		switch (key) {
+			case 32:                  
+				if (play) {
+					audio.pause();
+					play = false;
+				} else {
+					audio.play();
+					play = true;
+				}
+				break;
+		}
+	});
 
 
 	$scope.riddles = function(data, riddle, data2) {
@@ -157,7 +175,7 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 					{ saturation: -70 },
 					{visibility: "on"}
 				]
-            }
+			}
 		];
 		mapOptions = { 
 			center: location,
@@ -169,9 +187,9 @@ Crtl.controller('AppController', ['$scope', '$rootScope', '$http', '$timeout', f
 		};
 
 		marker = new google.maps.Marker({
-		    position: markerLoc,
-		    title:"Your Christmas gift!",
-		    icon: '../resources/map_compass.png'
+			position: markerLoc,
+			title:"Your Christmas gift!",
+			icon: '../resources/map_compass.png'
 		});
 		map = new google.maps.Map(document.getElementById('map'), mapOptions);
 		marker.setMap(map);

@@ -25,6 +25,14 @@ Router.run(function ($location, $rootScope) {
 		}
 	});
 });
+
+Router.run(function($rootScope) {
+	document.addEventListener('keyup', function(e) {
+		if (e.keyCode === 32) $rootScope.$broadcast('pauseMusic', e.which);
+	});
+});
+
+
 // SLIDING SIDE MENU
 // LISTEN FOR CLICK TO CLOSE DRAWER
 // Router.run(function ($rootScope) {

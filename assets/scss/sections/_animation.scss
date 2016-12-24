@@ -48,13 +48,13 @@
 	5% {
 		opacity: 1;
 	}
-	73% {
+	64% {
 		opacity: 1;
 	}
-	90% {
+	95% {
 		opacity: 0;
 	}
-	20% {
+	100% {
 		opacity: 0;
 	}
 }
@@ -68,10 +68,10 @@
 	5% {
 		opacity: 1;
 	}
-	73% {
+	64% {
 		opacity: 1;
 	}
-	90% {
+	95% {
 		opacity: 0;
 	}
 	100% {
@@ -88,10 +88,10 @@
 		transform: rotate(0deg);
 		opacity: 0;
 	}
-	10% {
+	23% {
 		opacity: 0;
 	}
-	15% {
+	40% {
 		opacity: 1;
 	}
 	73% {
@@ -118,10 +118,10 @@
 		transform: rotate(0deg);
 		opacity: 0;
 	}
-	10% {
+	23% {
 		opacity: 0;
 	}
-	15% {
+	40% {
 		opacity: 1;
 	}
 	73% {
@@ -150,16 +150,16 @@
 		transform: rotate(0deg);
 		opacity: 0;
 	}
-	15% {
+	30% {
 		opacity: 0;
 	}
-	20% {
+	50% {
 		opacity: 1;
 	}
-	47% {
+	50% {
 		opacity: 1;
 	}
-	53% {
+	52% {
 		opacity: 0;
 	}
 	100% {
@@ -180,16 +180,16 @@
 		transform: rotate(0deg);
 		opacity: 0;
 	}
-	15% {
+	30% {
 		opacity: 0;
 	}
-	20% {
+	50% {
 		opacity: 1;
 	}
-	47% {
+	50% {
 		opacity: 1;
 	}
-	53% {
+	52% {
 		opacity: 0;
 	}
 	100% {
@@ -211,16 +211,16 @@
 		transform: rotate(0deg);
 		opacity: 0;
 	}
-	18% {
+	30% {
 		opacity: 0;
 	}
-	21% {
+	50% {
 		opacity: 1;
 	}
 	25% {
 		opacity: 1;
 	}
-	40% {
+	50% {
 		opacity: 0;
 	}
 	100% {
@@ -241,10 +241,10 @@
 		transform: rotate(0deg);
 		opacity: 0;
 	}
-	18% {
+	30% {
 		opacity: 0;
 	}
-	21% {
+	40% {
 		opacity: 1;
 	}
 	35% {
@@ -265,11 +265,11 @@
 
 
 .tree {
-	-webkit-animation: 	tree 20s linear;
-	-moz-animation: 	tree 20s linear;
-	-ms-animation: 		tree 20s linear;
-	-o-animation: 		tree 20s linear;
-	animation: 			tree 20s linear;
+	-webkit-animation: 	tree 22s linear;
+	-moz-animation: 	tree 22s linear;
+	-ms-animation: 		tree 22s linear;
+	-o-animation: 		tree 22s linear;
+	animation: 			tree 22s linear;
 }
 .rotating-1 {
 	-webkit-animation: 	rotating-1 20s linear infinite;
