@@ -22,7 +22,9 @@
 	<div title="Intro" class="tab-pane" ng-class="{active : views.INTRO}">
 		<p>Welcome to your</p><br>
 		<p>Christmas gift Treasure Hunt!</p><br>
-		<p>Answer three riddles to see your gift.</p><br>
+<!-- 		<p>Christmas gift!</p><br>
+		<p>Turn up the sound on your computer</p><br>
+		<p>and go to this website to see it:</p><br><br><br> -->
 		<p>To begin, touch the One Ring</p><br>
 		<p>if you dare...</p>
 		<img src="../resources/ring.png" alt="" class="ring" ng-click="app.tabFunction('RIDDLE1')">
@@ -32,7 +34,7 @@
 		<p>37 -122</p><br>
 		<p>If you add, subtract, or multiply me,</p><br>
 		<p>you'll only get half the truth</p><br>
-		<p>and miss me by a long shot.</p><br>
+		<p>and miss me by miles.</p><br>
 		<p>What are we?</p>
 		<form ng-submit="riddles(riddle.one, '1', 'false')">
 			<input type="text" ng-model="riddle.one" ng-class="fail===true ? 'fail' : 'pass'" required autofocus>
@@ -43,8 +45,8 @@
 	<div title="Riddle2" class="tab-pane" ng-class="{active : views.RIDDLE2}">
 		<p>I contain one 'ion',</p><br>
 		<p>but I'm not a molecule.</p><br>
-		<p>I'm a large square</p><br>
-		<p>inside a big apple.</p><br>
+		<p>I'm a small square inside a</p><br>
+		<p>big apple.</p><br>
 		<p>I'm not only a synonym of marriage,</p><br>
 		<p>but the entire goal of it.</p><br>
 		<p>What am I?</p><br>
@@ -56,9 +58,10 @@
 
 	<div title="Riddle3" class="tab-pane" ng-class="{active : views.RIDDLE3}">
 		<p>598606 and 065635</p><br>
-		<p>Do you get the point?</p> <br>
-		<p>Combined with the first clue,</p> <br>
-		<p>this clue will get you closer.</p> <br>
+		<p>The point of this</p> <br>
+		<p>is after the first clue</p> <br>
+		<p>and before these numbers.</p> <br>
+		<p>The combination will get you closer.</p> <br>
 			<input type="text" ng-model="riddle.three.a" ng-class="fail ? 'fail' : 'pass'" required>
 			<input type="text" ng-model="riddle.three.b" ng-class="fail ? 'fail' : 'pass'" required> <br>
 				<button ng-click="riddles(riddle.three.a, '3', riddle.three.b)">This is my answer</button><br><br>
