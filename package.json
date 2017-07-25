@@ -3,10 +3,18 @@
   "version": "1.0.0",
   "description": "Treasure Hunt style game originally for my husband to find his Christmas gift",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "bower": "^1.8.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3"
   },
-  "repository": {
+  "devDependencies": {},
+  "engines": {
+    "node": "^8.2.1",
+    "npm": "^5.3.0"
+  },
+ "repository": {
     "type": "git",
     "url": "git+https://github.com/SalamanderMike/riddles-in-the-dark.git"
   },
@@ -15,15 +23,5 @@
   "bugs": {
     "url": "https://github.com/SalamanderMike/riddles-in-the-dark/issues"
   },
-  "homepage": "https://github.com/SalamanderMike/riddles-in-the-dark#readme",
-  "dependencies": {
-    "body-parser": "^1.17.2",
-    "bower": "^1.8.0",
-    "ejs": "^2.5.6",
-    "express": "^4.15.3"
-  },
-  "engines": {
-    "node": "^8.2.1",
-    "npm": "^5.3.0"
-  },
+  "homepage": "https://github.com/SalamanderMike/riddles-in-the-dark#readme"
 }
