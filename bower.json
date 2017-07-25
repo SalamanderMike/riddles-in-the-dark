@@ -15,15 +15,15 @@
     "bower_components"
   ],
   "dependencies": {
-    "angular": "~1.6.1",
-    "angular-route": "~1.6.1",
-    "angular-sanitize": "~1.6.1",
-    "angular-animate": "^1.6.1",
-    "jquery": "^3.1.1",
+    "angular": "~1.6.5",
+    "angular-route": "~1.6.5",
+    "angular-sanitize": "~1.6.5",
+    "angular-animate": "^1.6.5",
+    "jquery": "^3.2.1",
     "bootstrap": "^3.3.7",
     "normalize-css": "^5.0.0"
   },
   "resolutions": {
-    "angular": "~1.6.1"
+    "angular": "~1.6.5"
   }
 }
